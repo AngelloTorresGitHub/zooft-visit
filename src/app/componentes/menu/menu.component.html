@@ -1,0 +1,73 @@
+<div>
+  <nav>
+    <div class="container-nav">
+      <div class="item-nav logoNav">
+        <a routerLink="/quienesSomos">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584.13 596.28">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fac938;
+                }
+
+                .cls-2 {
+                  fill: #f0f6f6;
+                }
+
+              </style>
+            </defs>
+            <title>logoZOOFT</title>
+            <g id="Capa_5" data-name="Capa 5">
+              <circle class="cls-1" cx="158.15" cy="50.2" r="34.82" />
+              <circle class="cls-2" cx="158.15" cy="50.2" r="21.13" />
+              <circle class="cls-1" cx="425.98" cy="50.2" r="34.82" />
+              <circle class="cls-2" cx="425.98" cy="50.2" r="21.13" />
+              <polygon class="cls-1"
+                points="456.63 82.4 390.57 28.83 292.07 28.83 193.57 28.83 127.5 82.4 57.87 293.98 204.28 408.25 292.07 408.25 379.86 408.25 526.27 293.98 456.63 82.4" />
+              <polygon class="cls-2"
+                points="292.07 320.76 242.67 343.98 247.43 368.97 292.07 398.73 336.7 368.97 341.47 343.98 292.07 320.76" />
+              <path class="cls-2"
+                d="M407.53,177.92c4.17-33.33,13.55-92.72,0-98.2-27.38-9.52-79,4.69-115.46,36.9C255.63,84.41,204,70.2,176.6,79.72c-13.55,5.48-4.16,64.87,0,98.2,1.88,15.05,41.07,44.64,41.07,44.64L176.6,242.8l17.26,78,48.81,14.29,43.45-20.83V280.29l-26.19-23.8-2.38-66.66L207,175V145.19l60.41,33.92-3.28,63.69,28,13.69,28-13.69-3.27-63.69,60.41-33.92V175l-50.59,14.88-2.38,66.66L298,280.29v33.93l43.45,20.83,48.8-14.29,17.26-78-41.07-20.24S405.65,193,407.53,177.92Z" />
+              <rect class="cls-1" x="18.29" y="407.02" width="547.56" height="173.88" />
+              <path class="cls-2" d="M71,532.72h49.69v21.53H37.84V541.66l48.7-86.47H37.59V433.66h82.33v12.09Z" />
+              <path class="cls-2"
+                d="M233.63,504.8q0,22.29-14.12,36.74T182.61,556q-22.94,0-37.18-14.45T131.18,504.8V483.1q0-22.19,14.21-36.69t37.06-14.49q22.7,0,36.94,14.49t14.24,36.69Zm-27.91-21.86q0-12.92-6.08-21.2t-17.19-8.29q-11.35,0-17.35,8.24t-6,21.25V504.8q0,13.09,6.09,21.37t17.43,8.29q11,0,17.07-8.29t6-21.37Z" />
+              <path class="cls-2"
+                d="M350.91,504.8q0,22.29-14.12,36.74T299.89,556q-22.93,0-37.18-14.45T248.46,504.8V483.1q0-22.19,14.2-36.69t37.07-14.49q22.69,0,36.94,14.49t14.24,36.69ZM323,482.94q0-12.92-6.09-21.2t-17.18-8.29q-11.36,0-17.35,8.24t-6,21.25V504.8q0,13.09,6.09,21.37t17.43,8.29q11,0,17.07-8.29t6-21.37Z" />
+              <path class="cls-2" d="M440.11,505.72H396v48.53H368V433.66h80.58v21.53H396v29h44.14Z" />
+              <path class="cls-2" d="M546.54,455.19H514.66v99.06h-28V455.19H455.35V433.66h91.19Z" />
+            </g>
+          </svg>
+        </a>
+
+      </div>
+      <!-- <div class="item-nav">
+        <a routerLink="{{ ruta[0] }}">
+          <i class="fa fa-home fa-2x"></i>
+        </a>
+      </div> -->
+      <div class="item-nav">
+        <button class="switch" id="switch" (click)="onCambiarColor()">
+          <span><i class="fas fa-sun fa-2x"></i></span>
+          <span><i class="fas fa-moon fa-2x"></i></span>
+        </button>
+      </div>
+      <div class="item-nav">
+        <a id="btn-language" (click)="onBtnLanguage()">
+          <i class="fa fa-language fa-3x"></i>
+        </a>
+      </div>
+      <div class="item-nav">
+        <a routerLink="/incidencia">
+          <i class="fa fa-exclamation fa-2x"></i>
+        </a>
+      </div>
+    </div>
+    <div class="container-language" id="language">
+      <div class="language">
+        <a class="titulo hidden" id="btn-esp" (click)="onCambiarIdioma('esp')">español</a>
+        <a class="titulo" id="btn-eng" (click)="onCambiarIdioma('eng')">english</a>
+      </div>
+    </div>
+  </nav>
+</div>

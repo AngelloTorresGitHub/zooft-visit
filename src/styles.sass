@@ -1,0 +1,269 @@
+/* imports */
+@import "normalize.css"
+@import "variables.sass"
+
+// ----- ----- ----- ----- ----- GENERAL ----- ----- ----- ----- -----
+body
+  background: $blanco
+  color: $negroOscuro
+  font-family: $texto
+  transition: .3s ease all
+  &.dark
+    background: $negroMedio
+    color: $blanco
+
+h1, h2, h3, h4, h5, h6, label
+  color: $rojo
+  font-family: $titulo
+  font-weight: bold
+  text-transform: uppercase
+
+label
+  display: block
+
+i
+  color: $amarillo
+
+li
+  color: $amarillo
+  font-family: $titulo
+
+.container
+  display: grid
+
+.form
+  margin-bottom: 20px
+
+.linea
+    position: relative
+    border-bottom: 3px solid $rojo
+    &::after
+      content: ''
+      display:  block
+      position: absolute
+      bottom: -40px
+      border-top: 20px solid $rojo
+      border-right: 20px solid transparent
+      border-left: 20px solid transparent
+      border-bottom: 20px solid transparent
+      left: calc(100% - 20px)
+
+.btn
+  font-weight: bold
+  text-transform: uppercase
+  color: $blanco
+  display: inline-block
+  text-align: center
+  vertical-align: middle
+  user-select: none
+  background-color: transparent
+  border: 1px solid transparent
+  padding: 0.375rem 0.75rem
+  font-size: 1rem
+  line-height: 1.5
+  border-radius: 0.25rem
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+
+.btn-cancelar
+  background-color:$negroClaro
+  border-color: $negroClaro
+
+.btn-cancelar:hover
+  background-color: #5a6268
+  border-color: #545b62
+
+.btn-enviar
+  background-color:$rojo
+  border-color: $rojo
+
+.btn-enviar:hover
+  background-color: #5a6268
+  border-color: #545b62
+
+// ----- ----- ----- ----- ----- MENU-NAV GENERAL ----- ----- ----- ----- -----
+.nav
+  grid-area: nav
+  z-index: 1
+  position: fixed !important
+  nav
+    display: grid
+    .container-nav
+      display: grid
+      grid-gap: 10px
+      justify-content: center
+      align-items: center
+      background-color: $negro
+      color: $amarillo
+      .item-nav
+        display: flex
+        justify-content: center
+        align-items: center
+        .switch
+          background-color: $negroClaro
+          border-radius: 1000px
+          border: none
+          position: relative
+          display: flex
+          outline: none
+          &::after
+            content: ""
+            display: block
+            width: 40px
+            height: 32px
+            position: absolute
+            background-color: $blanco
+            top: 0px
+            left: 0px
+            right: unset
+            border-radius: 100px
+            transition: .3s ease all
+          &.active
+            background-color: $amarillo
+            i
+              color: $blanco
+            &::after
+              left: unset
+              right: 0px
+          span
+            width: 32px
+            height: 32px
+            line-height: 32px
+            display: block
+            background-color: none
+            color: #ffffff
+    .container-language
+      display: grid
+      grid-gap: 10px
+      z-index: -1
+      position: absolute
+      transition: .3s ease all
+      .language
+        display: grid
+        justify-content: center
+        align-items: center
+        background-color: $negroOscuro
+        a
+          &.hidden
+            display: none
+
+  a
+    text-transform: uppercase
+    font-weight: bold
+    text-decoration: none
+    color: $amarillo
+    padding: 10px
+    margin: auto
+
+// ----- ----- ----- ----- ----- SECTION GENERAL ----- ----- ----- ----- -----
+.section
+  grid-area: section
+  .container-section
+    display: grid
+    grid-gap: 10px
+    .imagen
+      display: grip
+      justify-content: center
+      align-items: center
+      svg
+        width: 40%
+  .hidden
+    display: none
+
+// ----- ----- ----- ----- ----- FOOTER  GENERAL----- ----- ----- ----- -----
+.footer
+  grid-area: footer
+  .container-footer
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    justify-content: space-around
+    background-color: $negro
+    color: $amarillo
+    .item-footer
+      display: flex
+      justify-content: center
+      align-items: center
+
+///////////////////////////////////////////////////////////////////////
+
+// ----- ----- ----- ----- ----- MOBILE ----- ----- ----- ----- -----
+@media only screen and ( max-width: 1023px )
+  .container
+    grid-template-rows: 100px, 1fr, 150px
+    grid-template-areas: "nav" "section" "footer"
+
+  .nav
+    width: 100%
+    nav
+      .container-nav
+        grid-template-columns: repeat(4, 1fr)
+        justify-content: space-around
+        .item-nav
+          height: 80px
+        .logoNav
+          svg
+            width: 60px
+      .container-language
+        grid-template-columns: repeat(4, 1fr)
+        justify-content: space-around
+        top: 0px
+        width: 100%
+        .language
+          grid-column: 3
+      .active-language
+        top: 80px
+
+  .container-section
+    margin-top: 80px
+    grid-template-columns: 10% 1fr 10%
+    h1, article
+      grid-column: 2
+    .imagen
+      grid-column: 1 / 4
+      img
+        width: 100%
+
+  .footer
+    .container-footer
+      .item-footer
+        p
+          font-size: x-small
+
+// ----- ----- ----- ----- ----- TABLET / DESKTOP ----- ----- ----- ----- -----
+@media screen and ( min-width: 1024px )
+  .container
+    grid-template-columns: 100px 1fr
+    grid-template-areas: "nav section" "nav section" "nav footer"
+
+  .nav
+    width: 100px
+    nav
+      overflow: hidden
+      height: auto
+      .container-nav
+        border-right: 4px solid $negro
+        grid-template-rows: 120px repeat(3, 70px)
+        height: 100%
+        .item-nav
+          padding-bottom: 10px
+        .logoNav
+          svg
+            width: 90px
+      .container-language
+        grid-template-rows: 120px repeat(3, 70px)
+        justify-content: space-around
+        left: 0px
+        .language
+          grid-row: 3
+      .active-language
+        left: 100px
+
+  .container-section
+    grid-template-columns: 10% 10% 1fr 10% 10%
+    h1, article
+      grid-column: 3
+    .imagen
+      grid-column: 2 / 5
+      img
+        width: 100%
+
+///////////////////////////////////////////////////////////////////////

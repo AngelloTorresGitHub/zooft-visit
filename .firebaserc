@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "-prueba": "zooft-app",
+    "default": "zooft-app"
+  }
+}

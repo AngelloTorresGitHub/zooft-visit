@@ -1,0 +1,319 @@
+<div>
+  <section id="inicio">
+    <!-- Sección en Español -->
+
+    <!-- <form (submit)="onEnviarIncidencia()"> -->
+    <!-- <form action="http://zooft-admon.es/pruebaForm" method="get"> -->
+
+      <div class="container-section esp" id="esp">
+        <h1 class="titulo esp">Formulario de incidencias</h1>
+        <!-- Selección de incidencia -->
+        <article>
+          <div class="form">
+            <!-- Campos ocultos -->
+            <input class="esp" type="text" name="idVisit" id="idVisit" value="{{ idVisit }}">
+            <input class="esp" type="text" name="IdAnimal" id="IdAnimal" value="{{ IdAnimal }}">
+            <input class="esp" type="text" name="IdZona" id="IdZona" value="{{ IdZona }}">
+          </div>
+        </article>
+        <article>
+          <div class="form">
+            <label class="titulo esp" for="tipoIncidencia">Seleccione</label>
+            <select name="tipoIncidencia" id="tipoIncidencia" [(ngModel)]="tipoIncidencia">
+              <option value="0" selected>Tipo de incidencia</option>
+              <option value="1">Basura / Suciedad</option>
+              <option value="2">Infraestructura Dañada / Defectuosa</option>
+              <option value="3">Animales</option>
+              <option value="4">Visitantes</option>
+            </select>
+          </div>
+        </article>
+
+
+        <article>
+          <div class="form">
+            <button type="submit" class="btn btn-enviar">Enviar</button>
+          </div>
+        </article>
+
+
+
+        <!-- //////////////////////////////////// -->
+        <!-- Incidencia 1 -->
+<!--         <article *ngIf="tipoIncidencia === '1'">
+          <div class="form">
+            <label class="titulo" for="tipoBasura">Basura / Suciedad</label>
+            <select name="tipoBasura" id="tipoBasura" [(ngModel)]="tipoBasura">
+              <option value="0" selected>Descripción de la incidencia</option>
+              <option value="1">Papelera llena</option>
+              <option value="2">Basura en espacio público</option>
+              <option value="3">Desechos corporales</option>
+            </select>
+          </div>
+        </article> -->
+
+        <!-- Botón Incidencia 1 / Papelera llena -->
+<!--         <article *ngIf="tipoIncidencia === '1' && tipoBasura === '1'">
+          <div class="form">
+            <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          </div>
+        </article> -->
+
+        <!-- Incidencia 1 / Basura en espacio público -->
+<!--         <article *ngIf="tipoIncidencia === '1' && tipoBasura === '2'">
+          <div class="form">
+            <label class="titulo">Basura en espacio público</label>
+            <select name="basuraPublico" id="basuraPublico" [(ngModel)]="basuraPublico">
+              <option value="0" selected>Lugar donde se encuentra</option>
+              <option value="zvs">Zonas verdes</option>
+              <option value="cal">Calzada</option>
+            </select>
+          </div>
+        </article> -->
+
+        <!-- Botón Incidencia 1 / Basura en espacio público -->
+<!--         <article *ngIf="tipoIncidencia === '1' && tipoBasura === '2' && basuraPublico !== '0'">
+          <div class="form">
+            <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          </div>
+        </article> -->
+
+        <!-- Incidencia 1 / Desechos corporales -->
+<!--         <article *ngIf="tipoIncidencia === '1' && tipoBasura === '3'">
+          <div class="form">
+            <label class="titulo">Desechos corporales</label>
+            <select name="basuraDesechos" id="basuraDesechos" [(ngModel)]="basuraDesechos">
+              <option value="0" selected>Lugar donde se encuentra</option>
+              <option value="pap">Papeleras</option>
+              <option value="zvs">Zonas verdes</option>
+              <option value="cal">Calzada</option>
+            </select>
+          </div>
+        </article> -->
+
+        <!-- Botón Incidencia 1 / Desechos corporales -->
+<!--         <article *ngIf="tipoIncidencia === '1' && tipoBasura === '3' && basuraDesechos !== '0'">
+          <div class="form">
+            <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          </div>
+        </article> -->
+
+        <!-- //////////////////////////////////// -->
+        <!-- Incidencia 2 -->
+<!--         <article *ngIf="tipoIncidencia === '2'">
+          <div class="form">
+            <label class="titulo">Infraestructura Dañada / Defectuosa</label>
+            <select name="tipoInfraestructura" id="tipoInfraestructura" [(ngModel)]="tipoInfraestructura">
+              <option value="0" selected>Descripción de la incidencia</option>
+              <option value="1">Inmobiliario</option>
+              <option value="2">Cercas / Jaulas</option>
+              <option value="3">Iluminación</option>
+              <option value="4">Fuentes de agua</option>
+              <option value="5">Comportamiento incívico de visitante</option>
+            </select>
+          </div>
+        </article> -->
+
+        <!-- Botón Incidencia 2 -->
+<!--         <article *ngIf="tipoIncidencia === '2' && tipoInfraestructura !== '0'">
+          <div class="form">
+            <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          </div>
+        </article> -->
+
+        <!-- //////////////////////////////////// -->
+        <!-- Incidencia 3 -->
+<!--         <article *ngIf="tipoIncidencia === '3'">
+          <div class="form">
+            <label class="titulo">Animales</label>
+            <select name="tipoAnimal" id="tipoAnimal" [(ngModel)]="tipoAnimal">
+              <option value="0" selected>Descripción de la incidencia</option>
+              <option value="1">Objeto extraño en recinto del animal</option>
+              <option value="2">Comportamiento extraño del animal</option>
+              <option value="3">Comportamiento incívico de visitante</option>
+            </select>
+          </div>
+        </article> -->
+        <!-- Botón Incidencia 3 -->
+<!--         <article *ngIf="tipoIncidencia === '3' && tipoAnimal !== '0'">
+          <div class="form">
+            <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          </div>
+        </article> -->
+
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- Incidencia 4 -->
+<!--         <article *ngIf="tipoIncidencia === '4'">
+          <div class="form">
+            <label class="titulo">Visitantes</label>
+            <select name="tipoVisitante" id="tipoVisitante" [(ngModel)]="tipoVisitante">
+              <option value="0" selected>Descripción de la incidencia</option>
+              <option value="1">Atención sanitaria</option>
+            </select>
+          </div>
+        </article> -->
+
+        <!-- Botón Incidencia 4 -->
+<!--         <article *ngIf="tipoIncidencia === '4' && tipoVisitante !== '0'">
+          <div class="form">
+            <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          </div>
+        </article> -->
+
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- Botón Cancelar incidencia -->
+        <article>
+          <div class="form">
+            <button class="btn btn-cancelar" type="button" routerLink="{{ ruta }}">Cancelar</button>
+          </div>
+        </article>
+      </div>
+<!--     </form> -->
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- Sección en Ingles -->
+<!--     <div class="container-section eng hidden" id="eng">
+      <h1 class="titulo esp">Incident form</h1> -->
+      <!-- Selección de incidencia -->
+<!--       <article>
+        <div class="form">
+          <label class="titulo">Select</label>
+          <select name="tipoIncidencia" id="tipoIncidencia" [(ngModel)]="tipoIncidencia">
+            <option value="0" selected>Type of incidence</option>
+            <option value="1">Trash / Dirt</option>
+            <option value="2">Damaged / Defective Infrastructure</option>
+            <option value="3">Animals</option>
+            <option value="4">Visitors</option>
+          </select>
+        </div>
+      </article> -->
+
+      <!-- //////////////////////////////////// -->
+      <!-- Incidencia 1 -->
+<!--       <article *ngIf="tipoIncidencia === '1'">
+        <div class="form">
+          <label class="titulo">Trash / Dirt</label>
+          <select name="tipoBasura" id="tipoBasura" [(ngModel)]="tipoBasura">
+            <option value="0" selected>Description of the incident</option>
+            <option value="1">Bin full</option>
+            <option value="2">Garbage in public space</option>
+            <option value="3">Bodily waste</option>
+          </select>
+        </div>
+      </article> -->
+      <!-- Botón Incidencia 1 / Papelera llena -->
+<!--       <article *ngIf="tipoIncidencia === '1' && tipoBasura === '1'">
+        <div class="form">
+          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+        </div>
+      </article> -->
+
+      <!-- Incidencia 1 / Basura en espacio público -->
+<!--       <article *ngIf="tipoIncidencia === '1' && tipoBasura === '2'">
+        <div class="form">
+          <label class="titulo">Garbage in public space</label>
+          <select name="basuraPublico" id="basuraPublico" [(ngModel)]="basuraPublico">
+            <option value="0" selected>Place where you are</option>
+            <option value="zvs">Parkland</option>
+            <option value="cal">Road</option>
+          </select>
+        </div>
+      </article> -->
+      <!-- Botón Incidencia 1 / Basura en espacio público -->
+<!--       <article *ngIf="tipoIncidencia === '1' && tipoBasura === '2' && basuraPublico !== '0'">
+        <div class="form">
+          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+        </div>
+      </article> -->
+
+      <!-- Incidencia 1 / Desechos corporales -->
+<!--       <article *ngIf="tipoIncidencia === '1' && tipoBasura === '3'">
+        <div class="form">
+          <label class="titulo">Bodily waste</label>
+          <select name="basuraDesechos" id="basuraDesechos" [(ngModel)]="basuraDesechos">
+            <option value="0" selected>Place where you are</option>
+            <option value="pap">Litter bins</option>
+            <option value="zvs">Parkland</option>
+            <option value="cal">Road</option>
+          </select>
+        </div>
+      </article> -->
+      <!-- Botón Incidencia 1 / Desechos corporales -->
+      <!-- <article *ngIf="tipoIncidencia === '1' && tipoBasura === '3' && basuraDesechos !== '0'">
+        <div class="form">
+          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+        </div>
+      </article> -->
+
+      <!-- //////////////////////////////////// -->
+      <!-- Incidencia 2 -->
+     <!--  <article *ngIf="tipoIncidencia === '2'">
+        <div class="form">
+          <label class="titulo">Damaged / Defective Infrastructure</label>
+          <select name="tipoInfraestructura" id="tipoInfraestructura" [(ngModel)]="tipoInfraestructura">
+            <option value="0" selected>Description of the incident</option>
+            <option value="1">Real estate</option>
+            <option value="2">Fences / Cages</option>
+            <option value="3">Illumination</option>
+            <option value="4">Water sources</option>
+            <option value="5">Uncivil visitor behavior</option>
+          </select>
+        </div>
+      </article> -->
+      <!-- Botón Incidencia 2 -->
+      <!-- <article *ngIf="tipoIncidencia === '2' && tipoInfraestructura !== '0'">
+        <div class="form">
+          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+        </div>
+      </article> -->
+
+      <!-- //////////////////////////////////// -->
+      <!-- Incidencia 3 -->
+      <!-- <article *ngIf="tipoIncidencia === '3'">
+        <div class="form">
+          <label class="titulo">Animals</label>
+          <select name="tipoAnimal" id="tipoAnimal" [(ngModel)]="tipoAnimal">
+            <option value="0" selected>Description of the incident</option>
+            <option value="1">Foreign object in the animal's enclosure</option>
+            <option value="2">Strange behavior of the animal</option>
+            <option value="3">Uncivil visitor behavior</option>
+          </select>
+        </div>
+      </article> -->
+      <!-- Botón Incidencia 3 -->
+      <!-- <article *ngIf="tipoIncidencia === '3' && tipoAnimal !== '0'">
+        <div class="form">
+          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+        </div>
+      </article> -->
+
+      <!-- //////////////////////////////////// -->
+      <!-- Incidencia 4 -->
+      <!-- <article *ngIf="tipoIncidencia === '4'">
+        <div class="form">
+          <label class="titulo">Visitors</label>
+          <select name="tipoVisitante" id="tipoVisitante" [(ngModel)]="tipoVisitante">
+            <option value="0" selected>Description of the incident</option>
+            <option value="1">Health care</option>
+          </select>
+        </div>
+      </article> -->
+      <!-- Botón Incidencia 4 -->
+      <!-- <article *ngIf="tipoIncidencia === '4' && tipoVisitante !== '0'">
+        <div class="form">
+          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+        </div>
+      </article> -->
+
+      <!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+      <!-- Botón Cancelar incidencia -->
+      <!-- <article>
+        <div class="form">
+          <button class="btn btn-cancelar" type="button" routerLink="{{ ruta }}">Cancel</button>
+        </div>
+      </article>
+    </div> -->
+  </section>
+</div>
