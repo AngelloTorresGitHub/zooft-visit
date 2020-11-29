@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   ruta = '';
 
   constructor(
-    private animalServicio: AnimalServicio,
+    /* private animalServicio: AnimalServicio, */
     private cookieService: CookieService,
     private lenguajeServicio: LenguajeServicio
   ) {
