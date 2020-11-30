@@ -4,7 +4,7 @@ import { environment } from './../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, SETTINGS } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-/* import { HttpClient } from '@angular/common/http'; */
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -66,7 +66,7 @@ import { QuienesSomosComponent } from './componentes/quienes-somos/quienes-somos
     AppRoutingModule,
     FormsModule,
     MatSliderModule,
-/*     HttpClient, */
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firestone, 'zooft'),
     AngularFireModule,
     AngularFireAuthModule,

@@ -1,10 +1,10 @@
 import { Incidencia } from './../../modelo/incidencia.model';
-import { UsuarioServicio } from './../../Servicios/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { AnimalServicio } from 'src/app/Servicios/animal.service';
 import { CookieService } from 'ngx-cookie-service';
 import { LenguajeServicio } from './../../Servicios/lenguaje.service';
 import { Location } from '@angular/common';
+import { HttpService } from './../../Servicios/http.service';
 
 @Component({
   selector: 'app-incidencia',
@@ -22,12 +22,15 @@ export class IncidenciaComponent implements OnInit {
   };
 
   ruta = '';
+  url = 'http://127.0.0.1:8000/pruebaForm';
 
   constructor(
     private animalServicio: AnimalServicio,
     private cookieService: CookieService,
     private lenguajeServicio: LenguajeServicio,
     private location: Location,
+    private httpService: HttpService,
+
   ) {
     this.ruta = this.animalServicio.getAnimalService().ruta;
     this.incidencia.idVisit = this.cookieService.get('zooftVisitNum');
@@ -41,6 +44,12 @@ export class IncidenciaComponent implements OnInit {
   }
 
   enviarIncidencia(): void {
+  /* https://www.techiediaries.com/angular-9-ajax-get-and-post-requests-example/ */
+    /* Ruta del serve php en laravel, es provisional Cambiar cuando el proyecto laravel esté en AWS */
+
+    console.log(this.httpService.setPostDatos(this.url, this.incidencia));
+
+
 
   /*   ajax({
       type: 'POST',
@@ -52,12 +61,12 @@ export class IncidenciaComponent implements OnInit {
 
 
 
-    console.log('idVisit: ' + this.incidencia.idVisit);
+/*     console.log('idVisit: ' + this.incidencia.idVisit);
     console.log('IdAnimal: ' + this.incidencia.idAnimal);
     console.log('IdZona: ' + this.incidencia.idZona);
     console.log('Incidencia: ' + this.incidencia.mainIncidencia);
     console.log('SubIncidencia: ' + this.incidencia.subIncidencia);
-    console.log('lugarIncidencia: ' + this.incidencia.lugarIncidencia);
+    console.log('lugarIncidencia: ' + this.incidencia.lugarIncidencia); */
 
 
     if (this.cookieService.get('zooftLang') === 'esp') {
