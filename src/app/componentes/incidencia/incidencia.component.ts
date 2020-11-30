@@ -40,7 +40,7 @@ export class IncidenciaComponent implements OnInit {
     this.ruta = this.animalServicio.getAnimalService().ruta;
   }
 
-  onEnviarIncidencia(): void {
+  enviarIncidencia(): void {
 
   /*   ajax({
       type: 'POST',
@@ -49,7 +49,7 @@ export class IncidenciaComponent implements OnInit {
       }
     }); */
 
-    /* Cambiar los nombres a los input */
+
 
 
     console.log('idVisit: ' + this.incidencia.idVisit);
@@ -67,5 +67,16 @@ export class IncidenciaComponent implements OnInit {
     }
 
     this.location.back();
+  }
+
+  /* AL cambiar el valor del select de mainIncidencias, pone a '' los valores de los demás selects */
+  cambio(){
+    this.incidencia.subIncidencia = '';
+    this.incidencia.lugarIncidencia = '';
+  }
+
+  /* AL cambiar el valor del select de subIncidencia, pone a '' el valor del select lugarIncidencia */
+  cambioLugar(){
+    this.incidencia.lugarIncidencia = '';
   }
 }

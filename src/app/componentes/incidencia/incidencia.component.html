@@ -14,7 +14,7 @@
       <article>
         <div class="form">
           <label class="titulo esp" for="mainIncidencia">Seleccione</label>
-          <select name="mainIncidencia" id="mainIncidencia" [(ngModel)]="incidencia.mainIncidencia">
+          <select name="mainIncidencia" id="mainIncidencia" [(ngModel)]="incidencia.mainIncidencia" (change)="cambio()">
             <option value="" selected>Tipo de incidencia</option>
             <option value="1">Basura / Suciedad</option>
             <option value="2">Infraestructura Dañada / Defectuosa</option>
@@ -29,7 +29,7 @@
       <article *ngIf="incidencia.mainIncidencia === '1'">
         <div class="form">
           <label class="titulo" for="subIncidencia">Basura / Suciedad</label>
-          <select name="subIncidencia" id="subIncidencia" [(ngModel)]="incidencia.subIncidencia">
+          <select name="subIncidencia" id="subIncidencia" [(ngModel)]="incidencia.subIncidencia" (change)="cambioLugar()">
             <option value="" selected>Descripción de la incidencia</option>
             <option value="1">Papelera llena</option>
             <option value="2">Basura en espacio público</option>
@@ -41,7 +41,7 @@
       <!-- Botón Incidencia 1 / Papelera llena -->
       <article *ngIf="incidencia.mainIncidencia === '1' && incidencia.subIncidencia === '1'">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Enviar</button>
         </div>
       </article>
 
@@ -61,7 +61,7 @@
       <article
         *ngIf="incidencia.mainIncidencia === '1' && incidencia.subIncidencia === '2' && incidencia.lugarIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Enviar</button>
         </div>
       </article>
 
@@ -82,7 +82,7 @@
       <article
         *ngIf="incidencia.mainIncidencia === '1' && incidencia.subIncidencia === '3' && incidencia.lugarIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Enviar</button>
         </div>
       </article>
 
@@ -105,7 +105,7 @@
       <!-- Botón Incidencia 2 -->
       <article *ngIf="incidencia.mainIncidencia === '2' && incidencia.subIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Enviar</button>
         </div>
       </article>
 
@@ -125,7 +125,7 @@
       <!-- Botón Incidencia 3 -->
       <article *ngIf="incidencia.mainIncidencia === '3' && incidencia.subIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Enviar</button>
         </div>
       </article>
 
@@ -144,7 +144,7 @@
       <!-- Botón Incidencia 4 -->
       <article *ngIf="incidencia.mainIncidencia === '4' && incidencia.subIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Enviar</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Enviar</button>
         </div>
       </article>
 
@@ -158,6 +158,8 @@
     </div>
 
     <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
     <!-- Sección en Ingles -->
     <div class="container-section eng hidden" id="eng">
       <h1 class="titulo esp">Incident form</h1>
@@ -165,7 +167,7 @@
       <article>
         <div class="form">
           <label class="titulo" for="mainIncidencia">Select</label>
-          <select name="mainIncidencia" id="incidencia.mainIncidencia" [(ngModel)]="incidencia.mainIncidencia">
+          <select name="mainIncidencia" id="incidencia.mainIncidencia" [(ngModel)]="incidencia.mainIncidencia" (change)="cambio()">
             <option value="" selected>Type of incidence</option>
             <option value="1">Trash / Dirt</option>
             <option value="2">Damaged / Defective Infrastructure</option>
@@ -180,7 +182,7 @@
       <article *ngIf="incidencia.mainIncidencia === '1'">
         <div class="form">
           <label class="titulo" for="subIncidencia">Trash / Dirt</label>
-          <select name="subIncidencia" id="subIncidencia" [(ngModel)]="incidencia.subIncidencia">
+          <select name="subIncidencia" id="subIncidencia" [(ngModel)]="incidencia.subIncidencia" (change)="cambioLugar()">
             <option value="" selected>Description of the incident</option>
             <option value="1">Bin full</option>
             <option value="2">Garbage in public space</option>
@@ -191,7 +193,7 @@
       <!-- Botón Incidencia 1 / Papelera llena -->
       <article *ngIf="incidencia.mainIncidencia === '1' && incidencia.subIncidencia === '1'">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Send</button>
         </div>
       </article>
 
@@ -210,7 +212,7 @@
       <article
         *ngIf="incidencia.mainIncidencia === '1' && incidencia.subIncidencia === '2' && incidencia.lugarIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Send</button>
         </div>
       </article>
 
@@ -230,7 +232,7 @@
       <article
         *ngIf="incidencia.mainIncidencia === '1' && incidencia.subIncidencia === '3' && incidencia.lugarIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Send</button>
         </div>
       </article>
 
@@ -252,7 +254,7 @@
       <!-- Botón Incidencia 2 -->
       <article *ngIf="incidencia.mainIncidencia === '2' && incidencia.subIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Send</button>
         </div>
       </article>
 
@@ -272,7 +274,7 @@
       <!-- Botón Incidencia 3 -->
       <article *ngIf="incidencia.mainIncidencia === '3' && incidencia.subIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Send</button>
         </div>
       </article>
 
@@ -290,7 +292,7 @@
       <!-- Botón Incidencia 4 -->
       <article *ngIf="incidencia.mainIncidencia === '4' && incidencia.subIncidencia !== ''">
         <div class="form">
-          <button type="submit" class="btn btn-enviar" (click)="onEnviarIncidencia()">Send</button>
+          <button type="submit" class="btn btn-enviar" (click)="enviarIncidencia()">Send</button>
         </div>
       </article>
 
