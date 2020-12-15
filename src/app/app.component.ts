@@ -35,6 +35,7 @@ export class AppComponent {
 
     this.verificarCookie();
     this.verificarLenguaje();
+    /* poner clean */
   }
 
   verificarCookie() {

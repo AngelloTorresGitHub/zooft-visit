@@ -21,6 +21,7 @@ import { AnimalServicio } from './Servicios/animal.service';
 import { CookieService } from 'ngx-cookie-service';
 import { UsuarioServicio } from './Servicios/usuario.service';
 import { LenguajeServicio } from './Servicios/lenguaje.service';
+import { HttpService } from './Servicios/http.service';
 
 /* Componentes Animales */
 import { LoboGrisComponent } from './componentes/animales/lobo-gris/lobo-gris.component';
@@ -76,6 +77,7 @@ import { QuienesSomosComponent } from './componentes/quienes-somos/quienes-somos
     CookieService,
     UsuarioServicio,
     LenguajeServicio,
+    HttpService,
     { provide: SETTINGS, useValue: {}}
   ],
   bootstrap: [AppComponent]

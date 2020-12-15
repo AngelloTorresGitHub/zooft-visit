@@ -5,6 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { LenguajeServicio } from './../../Servicios/lenguaje.service';
 import { Location } from '@angular/common';
 import { HttpService } from './../../Servicios/http.service';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-incidencia',
@@ -22,7 +23,8 @@ export class IncidenciaComponent implements OnInit {
   };
 
   ruta = '';
-  url = 'http://127.0.0.1:8000/pruebaForm';
+  // url = 'http://127.0.0.1:8000/pruebaForm';
+  url = 'http://zooft-admon.es/pruebaForm';
 
   constructor(
     private animalServicio: AnimalServicio,
@@ -30,6 +32,7 @@ export class IncidenciaComponent implements OnInit {
     private lenguajeServicio: LenguajeServicio,
     private location: Location,
     private httpService: HttpService,
+    private httpClient: HttpClient,
 
   ) {
     this.ruta = this.animalServicio.getAnimalService().ruta;
@@ -44,29 +47,39 @@ export class IncidenciaComponent implements OnInit {
   }
 
   enviarIncidencia(): void {
+
+    this.httpService
+      .addIncidencia(this.incidencia, this.url)
+      .subscribe();
+
   /* https://www.techiediaries.com/angular-9-ajax-get-and-post-requests-example/ */
     /* Ruta del serve php en laravel, es provisional Cambiar cuando el proyecto laravel esté en AWS */
 
-    console.log(this.httpService.setPostDatos(this.url, this.incidencia));
+    /* console.log(this.httpService.setPostDatos(this.url, this.incidencia)); */
+    // this.httpService.setPostDatos(this.url, this.incidencia);
 
 
 
-  /*   ajax({
-      type: 'POST',
-      utl: '',
-      data: {
-      }
-    }); */
+  /*
+  $http({
+     method: 'POST',
+     url: 'http://localhost:8090/test/databases/test',
+     params: {id: "@id"},
+     contentType: "application/x-www-form-urlencoded"
 
+    }).then(function success(response) {
 
+    }, function error(response) {
 
+  });
+*/
 
-/*     console.log('idVisit: ' + this.incidencia.idVisit);
+    console.log('idVisit: ' + this.incidencia.idVisit);
     console.log('IdAnimal: ' + this.incidencia.idAnimal);
     console.log('IdZona: ' + this.incidencia.idZona);
     console.log('Incidencia: ' + this.incidencia.mainIncidencia);
     console.log('SubIncidencia: ' + this.incidencia.subIncidencia);
-    console.log('lugarIncidencia: ' + this.incidencia.lugarIncidencia); */
+    console.log('lugarIncidencia: ' + this.incidencia.lugarIncidencia);
 
 
     if (this.cookieService.get('zooftLang') === 'esp') {
