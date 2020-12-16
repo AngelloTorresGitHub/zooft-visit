@@ -24,7 +24,7 @@ export class IncidenciaComponent implements OnInit {
 
   ruta = '';
   // url = 'http://127.0.0.1:8000/pruebaForm';
-  url = 'http://zooft-admon.es/pruebaForm';
+  /* url = 'http://zooft-admon.es/pruebaForm'; */
 
   constructor(
     private animalServicio: AnimalServicio,
@@ -49,8 +49,12 @@ export class IncidenciaComponent implements OnInit {
   enviarIncidencia(): void {
 
     this.httpService
-      .addIncidencia(this.incidencia, this.url)
-      .subscribe();
+      .addIncidencia(this.incidencia)
+      .subscribe(
+        res => {
+          console.log(res);
+        }
+      );
 
   /* https://www.techiediaries.com/angular-9-ajax-get-and-post-requests-example/ */
     /* Ruta del serve php en laravel, es provisional Cambiar cuando el proyecto laravel esté en AWS */
